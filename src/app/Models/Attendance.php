@@ -17,6 +17,10 @@ class Attendance extends Model
         'break_finish_time',
         'user_id',
     ];
+    protected $dates = [
+        'break_start_time',
+        'break_finish_time',
+    ];
 
     public function user()
     {
