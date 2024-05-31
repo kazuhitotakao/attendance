@@ -18,9 +18,27 @@ class Attendance extends Model
         'user_id',
     ];
     protected $dates = [
+        'attend_time',
+        'leaving_time',
         'break_start_time',
         'break_finish_time',
     ];
+
+    public function getBreakTimeTotalAttribute()
+    {
+        $break_time = $this->break_time;
+        return gmdate("H:i:s", $break_time);
+    }
+
+    public function getWorkingHoursAttribute()
+    {
+        $attend_time = $this->attend_time;
+        $leaving_time = $this->leaving_time;
+        $break_time = $this->break_time;
+        $attend_leaving_diff = $attend_time->diffInSeconds($leaving_time);
+        $working_hours = $attend_leaving_diff - $break_time;
+        return gmdate("H:i:s", $working_hours);
+    }
 
     public function user()
     {
