@@ -11,6 +11,12 @@ use Carbon\Carbon;
 
 class AttendanceController extends Controller
 {
+    public function attendance()
+    {   
+        $attendances = Attendance::with('User')->get();
+        return view('attendance', compact('attendances'));
+    }
+
     public function addAttendTime()
     {
         $attendance = new Attendance;
@@ -49,7 +55,7 @@ class AttendanceController extends Controller
         $break_finish = $attendance->break_finish_time;
 
         $diffInSeconds = $break_start->diffInSeconds($break_finish);
-        $attendance->break_time = $diffInSeconds;
+        $attendance->break_time = $attendance->break_time + $diffInSeconds;
         $attendance->save();
         return redirect('/');
     }
