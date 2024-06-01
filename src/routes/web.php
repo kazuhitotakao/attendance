@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\AttendanceController;
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RegisteredUserController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,8 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::post('/register', [RegisteredUserController::class, 'store']);
 
 Route::middleware('auth')->group(function () {
-    Route::get('/', [AuthController::class, 'index']);
+    Route::get('/', [AttendanceController::class, 'index']);
     Route::get('/attendance', [AttendanceController::class, 'attendance']);
+    Route::post('/attendance/move', [AttendanceController::class, 'attendanceMove']);
     Route::post('/attend', [AttendanceController::class, 'addAttendTime']);
     Route::post('/leaving', [AttendanceController::class, 'addLeavingTime']);
     Route::post('/break-start', [AttendanceController::class, 'addBreakStartTime']);

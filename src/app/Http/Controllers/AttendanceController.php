@@ -11,16 +11,29 @@ use Carbon\Carbon;
 
 class AttendanceController extends Controller
 {
+    public function index()
+    {
+        return view('index');
+    }
+
     public function attendance()
-    {   
-        $attendances = Attendance::with('User')->get();
-        return view('attendance', compact('attendances'));
+    {
+        $attendance_day = Carbon::today();
+        $attendances = Attendance::with('User')->whereDate('date', $attendance_day)->get();
+        return view('attendance', compact('attendances', 'attendance_day'));
+    }
+
+    public function attendanceMove(Request $request)
+    {
+        $attendance_day = Carbon::createFromTimeString($request->attendance_day);
+        $attendances = Attendance::with('User')->whereDate('date', $attendance_day)->get();
+        return view('attendance', compact('attendances', 'attendance_day'));
     }
 
     public function addAttendTime()
     {
         $attendance = new Attendance;
-        $attendance->date = Carbon::now();
+        $attendance->date = Carbon::today();
         $attendance->attend_time = Carbon::now();
         $attendance->user_id = Auth::id();
         $attendance->save();
@@ -29,8 +42,8 @@ class AttendanceController extends Controller
 
     public function addLeavingTime()
     {
-        $today = Carbon::now()->toDateString();
-        $attendance = Attendance::where('user_id', Auth::id())->where('date', $today)->first();
+        $today = Carbon::today();
+        $attendance = Attendance::where('user_id', Auth::id())->whereDate('date', $today)->first();
         $attendance->leaving_time = Carbon::now();
         $attendance->save();
         return redirect('/');
@@ -38,8 +51,8 @@ class AttendanceController extends Controller
 
     public function addBreakStartTime()
     {
-        $today = Carbon::now()->toDateString();
-        $attendance = Attendance::where('user_id', Auth::id())->where('date', $today)->first();
+        $today = Carbon::today();
+        $attendance = Attendance::where('user_id', Auth::id())->whereDate('date', $today)->first();
         $attendance->break_start_time = Carbon::now();
         $attendance->save();
         return redirect('/');
@@ -47,8 +60,8 @@ class AttendanceController extends Controller
 
     public function addBreakFinishTime()
     {
-        $today = Carbon::now()->toDateString();
-        $attendance = Attendance::where('user_id', Auth::id())->where('date', $today)->first();
+        $today = Carbon::today();
+        $attendance = Attendance::where('user_id', Auth::id())->whereDate('date', $today)->first();
         $attendance->break_finish_time = Carbon::now();
 
         $break_start = $attendance->break_start_time;
