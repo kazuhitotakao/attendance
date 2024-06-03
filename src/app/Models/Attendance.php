@@ -35,9 +35,15 @@ class Attendance extends Model
         $attend_time = $this->attend_time;
         $leaving_time = $this->leaving_time;
         $break_time = $this->break_time;
-        $attend_leaving_diff = $attend_time->diffInSeconds($leaving_time);
-        $working_hours = $attend_leaving_diff - $break_time;
-        return gmdate("H:i:s", $working_hours);
+        if (!empty($leaving_time)) {
+            $attend_leaving_diff = $attend_time->diffInSeconds($leaving_time);
+            $working_hours = $attend_leaving_diff - $break_time;
+            return gmdate("H:i:s", $working_hours);
+        } else {
+            $working_hours = 0;
+            return gmdate("H:i:s", $working_hours);
+
+        }
     }
 
     public function user()
