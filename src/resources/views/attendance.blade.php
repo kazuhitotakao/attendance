@@ -33,11 +33,16 @@
         <tr class="attendance__row">
             <td class="attendance__data">{{ $attendance->user->name }}</td>
             <td class="attendance__data">{{ $attendance->attend_time->format('H:i:s') }}</td>
+            @if ($attendance->leaving_time === null)
+            <td class="attendance__data">{{ $attendance->leaving_time }}</td>
+            @else
             <td class="attendance__data">{{ $attendance->leaving_time->format('H:i:s') }}</td>
+            @endif
             <td class="attendance__data">{{ $attendance->break_time_total }}</td>
             <td class="attendance__data">{{ $attendance->working_hours }}</td>
         </tr>
         @endforeach
     </table>
+    {{ $attendances->links('vendor.pagination.custom') }}
 </div>
 @endsection
