@@ -2,6 +2,7 @@ const attend = document.getElementById('attend');
 const leaving = document.getElementById('leaving');
 const break_start = document.getElementById('break_start');
 const break_finish = document.getElementById('break_finish');
+
 if (flgAttend) {
     attend.disabled = true;
     } else {

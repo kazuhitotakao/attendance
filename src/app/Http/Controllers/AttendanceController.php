@@ -15,14 +15,20 @@ class AttendanceController extends Controller
     public function attendance()
     {
         $attendance_day = Carbon::today();
-        $attendances = Attendance::with('User')->whereDate('date', $attendance_day)->Paginate(5);
+        $attendances = Attendance::with('User')
+                        ->whereDate('date', $attendance_day)
+                        ->orderBy('user_id', 'asc')
+                        ->Paginate(5);
         return view('attendance', compact('attendances', 'attendance_day'));
     }
 
     public function attendanceMove(Request $request)
     {
         $attendance_day = Carbon::createFromTimeString($request->attendance_day);
-        $attendances = Attendance::with('User')->whereDate('date', $attendance_day)->Paginate(5);
+        $attendances = Attendance::with('User')
+                        ->whereDate('date', $attendance_day)
+                        ->orderBy('user_id', 'asc')
+                        ->Paginate(5);
         return view('attendance', compact('attendances', 'attendance_day'));
     }
 
@@ -30,7 +36,7 @@ class AttendanceController extends Controller
     {
         $today = Carbon::today();
         $attendance = Attendance::where('user_id', Auth::id())->whereDate('date', $today)->first();
-            // 就業前（user_idなし）
+        // 就業前（user_idなし）
         if (empty($attendance->user_id)) {
             JavaScriptFacade::put([
                 'flgAttend' => false,
@@ -45,9 +51,9 @@ class AttendanceController extends Controller
                 'flgLeaving' => true,
                 'flgBreakStart' => true,
                 'flgBreakFinish' => true,
-            ]);       
+            ]);
             // 休憩開始：１度目の休憩開始ボタンクリック（break_start_time追加）
-        } elseif (!empty($attendance->break_start_time) && empty($attendance->break_finish_time) ) {
+        } elseif (!empty($attendance->break_start_time) && empty($attendance->break_finish_time)) {
             JavaScriptFacade::put([
                 'flgAttend' => true,
                 'flgLeaving' => true,
@@ -56,14 +62,14 @@ class AttendanceController extends Controller
             ]);
             // 休憩開始終了：１度目の休憩終了と２度目以降の休憩開始終了
         } elseif (!empty($attendance->break_start_time) && !empty($attendance->break_finish_time)) {
-            if($attendance->break_start_time <= $attendance->break_finish_time){
+            if ($attendance->break_start_time <= $attendance->break_finish_time) {
                 JavaScriptFacade::put([
                     'flgAttend' => true,
                     'flgLeaving' => false,
                     'flgBreakStart' => false,
                     'flgBreakFinish' => true,
                 ]);
-            } elseif ($attendance->break_start_time > $attendance->break_finish_time){
+            } elseif ($attendance->break_start_time > $attendance->break_finish_time) {
                 JavaScriptFacade::put([
                     'flgAttend' => true,
                     'flgLeaving' => true,
@@ -71,7 +77,7 @@ class AttendanceController extends Controller
                     'flgBreakFinish' => false,
                 ]);
             }
-             // 勤務開始：出勤ボタンクリック（ID,date,attend_time追加）attend_time以外は空データ
+            // 勤務開始：出勤ボタンクリック（ID,date,attend_time追加）attend_time以外は空データ
         } elseif (!empty($attendance->attend_time)) {
             JavaScriptFacade::put([
                 'flgAttend' => true,

@@ -43,6 +43,9 @@
     <main>
         @yield('content')
     </main>
+    <footer class="footer">
+        <small class="footer__logo">Atte,inc.</small>
+    </footer>
 </body>
 
 </html>

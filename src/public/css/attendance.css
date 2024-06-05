@@ -2,6 +2,7 @@
     margin: 0 auto;
     padding: 30px 15px;
     max-width: 1230px;
+    background-color: #f2f2f2;
 }
 /* s日付 */
 .attendance-date__container{
@@ -43,21 +44,18 @@
     border-collapse: collapse;
 }
 
-.attendance__row {
-    border: 1px solid #E0DFDE;
-}
-
 .attendance__label {
-    background-color: #8B7969;
-    color: #FFF;
+    background-color: #f2f2f2;
+    color: #000;
     text-align: left;
-    font-weight: 400;
+    font-weight: bold;
 }
 
 /* sラベルとデータ共通 */
 .attendance__label,
 .attendance__data {
-    padding: 16px 8px;
+    padding: 18px 8px;
+    border-bottom: 1px solid;
 }
 
 .attendance__label:first-of-type,
