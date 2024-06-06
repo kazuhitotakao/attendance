@@ -27,24 +27,28 @@ class AttendancesTableSeeder extends Seeder
                 ],
                 [
                     'user_id' => '2',
+                    'leaving_time' => Carbon::today()->subDay()->addHour(17),
                     'break_time' => '3900',
                     'break_start_time' => '12:00:00',
                     'break_finish_time' => '13:05:00',
                 ],
                 [
                     'user_id' => '3',
+                    'leaving_time' => Carbon::today()->subDay()->addHour(17),
                     'break_time' => '3300',
                     'break_start_time' => '12:00:00',
                     'break_finish_time' => '12:55:00',
                 ],
                 [
                     'user_id' => '4',
+                    'leaving_time' => Carbon::today()->subDay()->addHour(17),
                     'break_time' => '3600',
                     'break_start_time' => '12:00:00',
                     'break_finish_time' => '13:00:00',
                 ],
                 [
                     'user_id' => '5',
+                    'leaving_time' => Carbon::today()->subDay()->addHour(17),
                     'break_time' => '3600',
                     'break_start_time' => '12:00:00',
                     'break_finish_time' => '13:00:00',
@@ -53,7 +57,6 @@ class AttendancesTableSeeder extends Seeder
         foreach ($params_yesterday as $param_yesterday) {
             $param_yesterday['date'] = Carbon::today()->subDay();
             $param_yesterday['attend_time'] = Carbon::today()->subDay()->addHour(9);
-            $param_yesterday['leaving_time'] = Carbon::today()->subDay()->addHour(17);
             $param_yesterday['created_at'] = Carbon::now();
             $param_yesterday['updated_at'] = Carbon::now();
             DB::table('attendances')->insert($param_yesterday);

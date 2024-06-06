@@ -43,6 +43,6 @@
         </tr>
         @endforeach
     </table>
-    {{ $attendances->links('vendor.pagination.custom') }}
+    {{ $attendances->appends(Request::only('attendance_day'))->links('vendor.pagination.custom') }}
 </div>
 @endsection

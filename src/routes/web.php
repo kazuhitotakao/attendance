@@ -20,6 +20,7 @@ Route::post('/register', [RegisteredUserController::class, 'store']);
 Route::middleware('auth')->group(function () {
     Route::get('/', [AttendanceController::class, 'index']);
     Route::get('/attendance', [AttendanceController::class, 'attendance']);
+    Route::get('/attendance/move', [AttendanceController::class, 'attendanceMove']);
     Route::post('/attendance/move', [AttendanceController::class, 'attendanceMove']);
     Route::post('/attend', [AttendanceController::class, 'addAttendTime']);
     Route::post('/leaving', [AttendanceController::class, 'addLeavingTime']);
