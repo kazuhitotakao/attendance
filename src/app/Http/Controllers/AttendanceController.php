@@ -16,9 +16,9 @@ class AttendanceController extends Controller
     {
         $attendance_day = Carbon::today();
         $attendances = Attendance::with('User')
-                        ->whereDate('date', $attendance_day)
-                        ->orderBy('user_id', 'asc')
-                        ->Paginate(5);
+            ->whereDate('date', $attendance_day)
+            ->orderBy('user_id', 'asc')
+            ->Paginate(5);
         return view('attendance', compact('attendances', 'attendance_day'));
     }
 
@@ -26,9 +26,9 @@ class AttendanceController extends Controller
     {
         $attendance_day = Carbon::createFromTimeString($request->attendance_day);
         $attendances = Attendance::with('User')
-                        ->whereDate('date', $attendance_day)
-                        ->orderBy('user_id', 'asc')
-                        ->Paginate(5);
+            ->whereDate('date', $request->attendance_day)
+            ->orderBy('user_id', 'asc')
+            ->Paginate(5);
         return view('attendance', compact('attendances', 'attendance_day'));
     }
 
