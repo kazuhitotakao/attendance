@@ -18,7 +18,7 @@
     color: #000;
     text-decoration: none;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 40px;
 }
 
 .header-utilities nav {
@@ -34,6 +34,7 @@
 .header-nav__link {
     color: #000;
     text-decoration: none;
+    font-size: 16px;
     font-weight: bold;
 }
 
@@ -48,14 +49,19 @@
 
 /* sページネーション */
 .pagination {
+    position: absolute;
+    top: 82%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     list-style: none;
 }
 
 .pagination li:not(.active) {
+    display: flex;
     border: 1px solid #E0DFDE;
-    padding: 4px 12px;
+    background-color: #fff;
 }
 
 .pagination li:not(:last-child) {
@@ -63,8 +69,13 @@
 }
 
 .pagination a {
-    color: #8B7969;
+    color: #2384cf;
     text-decoration: none;
+    padding: 4px 12px;
+}
+
+.pagination span {
+    padding: 4px 12px;
 }
 
 .pagination__link {
@@ -72,13 +83,15 @@
 }
 
 .active {
-    padding: 4px 12px;
-    border: 1px solid #8B7969;
-    background-color: #8B7969;
+    display: flex;
+    border: 1px solid #2384cf;
+    background-color: #2384cf;
     color: #FFF;
 }
+
 /* eページネーション */
 .footer{
+    margin-top: 10px;
     text-align: center;
     font-weight: bold;
 }

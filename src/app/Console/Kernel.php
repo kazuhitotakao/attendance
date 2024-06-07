@@ -19,7 +19,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('command:carryover')->daily();
+        $schedule->command('command:carryover')->dailyAt('0:00');
     }
 
     /**

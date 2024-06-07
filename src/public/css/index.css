@@ -1,17 +1,21 @@
-
+.attendance__container {
+    margin: 0 auto;
+    height: 80vh;
+    max-width: 1230px;
+    background-color: #f2f2f2;
+}
 .attendance__comment {
     margin: 0 auto;
     text-align: center;
     padding: 30px 15px;
     max-width: 1230px;
-    background-color: #f2f2f2;
 }
 
 .attendance__content {
+    position: relative;
     margin: 0 auto;
     padding: 30px 15px;
     max-width: 1230px;
-    background-color: #f2f2f2;
 }
 
 .attendance__panel {

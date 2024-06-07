@@ -1,11 +1,12 @@
 .attendance__content {
     margin: 0 auto;
-    padding: 30px 15px;
+    padding: 15px 15px;
+    height: 80vh;
     max-width: 1230px;
     background-color: #f2f2f2;
 }
 /* s日付 */
-.attendance-date__container{
+.attendance-date__container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,13 +14,13 @@
 
 .attendance__today {
     display: inline-block;
-    font-size: 22px;
+    margin: 10px 10px;
     text-align: center;
 }
 
 .attendance__form{
     display: inline-block;
-    width: 10%;
+    width: 8%;
     height: 27px;
     text-align: center;
     align-items: center;
@@ -39,8 +40,8 @@
 
 /* sテーブル */
 .attendance__table {
-    margin-top: 16px;
-    width: 100%;
+    margin: 0 auto;
+    width: 90%;
     border-collapse: collapse;
 }
 
@@ -54,19 +55,18 @@
 /* sラベルとデータ共通 */
 .attendance__label,
 .attendance__data {
-    padding: 18px 8px;
-    border-bottom: 1px solid;
+    font-weight: bold;
+    width: 20%;
+    padding: 14px 8px;
+    border-top: 1px solid;
 }
 
 .attendance__label:first-of-type,
 .attendance__data:first-of-type {
-    padding-left: 48px;
+    padding-left: 30px;
+    width: 22%;
 }
 
-.attendance__label:last-of-type,
-.attendance__data:last-of-type {
-    padding-right: 48px;
-}
 /* eラベルとデータ共通 */
 /* eテーブル */
 
