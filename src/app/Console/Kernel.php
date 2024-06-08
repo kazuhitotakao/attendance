@@ -20,6 +20,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('command:carryover')->dailyAt('0:00');
+        // $schedule->command('command:carryover')->everyMinute();
     }
 
     /**
