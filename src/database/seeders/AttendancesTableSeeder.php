@@ -17,6 +17,48 @@ class AttendancesTableSeeder extends Seeder
      */
     public function run()
     {
+        $params_last_month =
+            [
+                [
+                    'user_id' => '1',
+                    'break_time' => '3600',
+                    'break_start_time' => '12:00:00',
+                    'break_finish_time' => '13:00:00',
+                ],
+                [
+                    'user_id' => '2',
+                    'break_time' => '3900',
+                    'break_start_time' => '12:00:00',
+                    'break_finish_time' => '13:05:00',
+                ],
+                [
+                    'user_id' => '3',
+                    'break_time' => '3300',
+                    'break_start_time' => '12:00:00',
+                    'break_finish_time' => '12:55:00',
+                ],
+                [
+                    'user_id' => '4',
+                    'break_time' => '3600',
+                    'break_start_time' => '12:00:00',
+                    'break_finish_time' => '13:00:00',
+                ],
+                [
+                    'user_id' => '5',
+                    'break_time' => '3600',
+                    'break_start_time' => '12:00:00',
+                    'break_finish_time' => '13:00:00',
+                ],
+            ];
+        foreach ($params_last_month as $param_last_month) {
+            $param_last_month['date'] = Carbon::today()->subMonth();
+            $param_last_month['attend_time'] = Carbon::today()->subMonth()->addHour(9);
+            $param_last_month['leaving_time'] = Carbon::today()->subMonth()->addHour(17);
+            $param_last_month['created_at'] = Carbon::now();
+            $param_last_month['updated_at'] = Carbon::now();
+            DB::table('attendances')->insert($param_last_month);
+        }
+
         $params_yesterday =
             [
                 [
@@ -146,5 +188,46 @@ class AttendancesTableSeeder extends Seeder
             DB::table('attendances')->insert($param_tomorrow);
         }
 
+        $params_next_month =
+            [
+                [
+                    'user_id' => '1',
+                    'break_time' => '3600',
+                    'break_start_time' => '12:00:00',
+                    'break_finish_time' => '13:00:00',
+                ],
+                [
+                    'user_id' => '2',
+                    'break_time' => '3900',
+                    'break_start_time' => '12:00:00',
+                    'break_finish_time' => '13:05:00',
+                ],
+                [
+                    'user_id' => '3',
+                    'break_time' => '3300',
+                    'break_start_time' => '12:00:00',
+                    'break_finish_time' => '12:55:00',
+                ],
+                [
+                    'user_id' => '4',
+                    'break_time' => '3600',
+                    'break_start_time' => '12:00:00',
+                    'break_finish_time' => '13:00:00',
+                ],
+                [
+                    'user_id' => '5',
+                    'break_time' => '3600',
+                    'break_start_time' => '12:00:00',
+                    'break_finish_time' => '13:00:00',
+                ],
+            ];
+        foreach ($params_next_month as $param_next_month) {
+            $param_next_month['date'] = Carbon::today()->addMonth();
+            $param_next_month['attend_time'] = Carbon::today()->addMonth()->addHour(9);
+            $param_next_month['leaving_time'] = Carbon::today()->addMonth()->addHour(17);
+            $param_next_month['created_at'] = Carbon::now();
+            $param_next_month['updated_at'] = Carbon::now();
+            DB::table('attendances')->insert($param_next_month);
+        }
     }
 }

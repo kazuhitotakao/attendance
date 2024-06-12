@@ -1,0 +1,92 @@
+.record__content {
+    margin: 0 auto;
+    padding: 15px 15px;
+    height: 80vh;
+    max-width: 1230px;
+    background-color: #f2f2f2;
+}
+
+/* s月 */
+.record__user-name{
+    margin-right: 20%;
+    font-size: 20px;
+}
+.record__container {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.record-month__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 44%;
+}
+
+.record__today {
+    display: inline-block;
+    margin: 10px;
+    margin-left: 32px;
+    text-align: center;
+}
+
+.record__form{
+    display: inline-block;
+    width: 8%;
+    height: 27px;
+    text-align: center;
+    align-items: center;
+}
+.record__btn-move{
+    font-size: 20px;
+    font-weight: bold;
+    color: blue;
+    width: 36px;
+    height: 26px;
+    background-color: #fff;
+    border: 1.5px blue solid;
+    border-radius: 10%;
+    cursor: pointer;
+}
+/* e月 */
+
+/* sテーブル */
+.record__table {
+    margin: 0 auto;
+    width: 90%;
+    border-collapse: collapse;
+}
+
+.record__label {
+    background-color: #f2f2f2;
+    color: #000;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* sラベルとデータ共通 */
+.record__label,
+.record__data {
+    font-weight: bold;
+    width: 20%;
+    padding: 14px 8px;
+    border-top: 1px solid;
+}
+
+.record__label:first-of-type,
+.record__data:first-of-type {
+    padding-left: 50px;
+    width: 20%;
+}
+
+/* eラベルとデータ共通 */
+/* eテーブル */
+
+
+
+
+
+
+

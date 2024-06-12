@@ -1,0 +1,119 @@
+.user__content {
+    margin: 0 auto;
+    padding: 15px 15px;
+    height: 80vh;
+    max-width: 1230px;
+    background-color: #f2f2f2;
+}
+
+.user-name__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-name {
+    display: inline-block;
+    margin: 10px 10px;
+    text-align: center;
+}
+
+/* s 検索 */
+.user__inner{
+    position: relative;
+    left: 20%;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-form{
+    display: flex;
+    justify-content: space-around;
+    gap: 16px;
+    height: 32px;
+}
+
+.search-form__keyword-input{
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 12px;
+    min-width: 340px;
+    border: 1px solid #E3DED9;
+    background-color: #FBFBFB;
+}
+
+.btn{
+    display: block;
+    padding: 8px 32px;
+    border: none;
+    background-color: #2384cf;
+    color: #FFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+.search-form__search-btn,
+.search-form__reset-btn{
+    padding: 4px;
+    width: 70px;
+}
+
+/* e 検索 */
+
+/* sテーブル */
+.user__table {
+    margin: 0 auto;
+    width: 60%;
+    border-collapse: collapse;
+}
+
+.label {
+    background-color: #f2f2f2;
+    color: #000;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* sラベルとデータ共通 */
+.label,
+.data {
+    font-weight: bold;
+    padding: 12px 8px;
+    border-top: 1px solid;
+}
+
+.user__label-ID,
+.user__data-ID {
+    text-align: center;
+    padding-left: 50px;
+    width: 7%;
+}
+
+.user__label-name,
+.user__data-name {
+    width: 15%;
+}
+
+.user__label-email,
+.user__data-email {
+    width: 23%;
+}
+
+.user__label-button,
+.user__data-button {
+    text-align: center;
+    padding-right: 20px;
+    width: 10%;
+}
+
+.user__data-button--btn{
+  padding: 4px;
+  border: 1px solid #2384cf;
+  background-color: #2384cf;
+  color: #fff;
+  width: 70px;
+  cursor: pointer;
+}
+/* eラベルとデータ共通 */
+/* eテーブル */

@@ -7,7 +7,7 @@
 @section('content')
 <div class="attendance__content">
     <div class="attendance-date__container">
-        <form class="attendance__form" action="/attendance/move" method="post">
+        <form class="attendance__form" action="/attendance/move" method="get">
             @csrf
             <input type="hidden" name="attendance_day" value="{{ $attendance_day->subDay() }}">
             <button class="attendance__btn-move" type="submit">&lt</button>
@@ -15,7 +15,7 @@
         <div class="attendance__today">
             <h2>{{ $attendance_day->addDay()->format('Y-m-d')  }}</h2>
         </div>
-        <form class="attendance__form" action="/attendance/move" method="post">
+        <form class="attendance__form" action="/attendance/move" method="get">
             @csrf
             <input type="hidden" name="attendance_day" value="{{ $attendance_day->addDay() }}">
             <button class="attendance__btn-move" type="submit">&gt</button>

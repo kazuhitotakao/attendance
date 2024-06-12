@@ -63,8 +63,8 @@
 
 .attendance__label:first-of-type,
 .attendance__data:first-of-type {
-    padding-left: 30px;
-    width: 22%;
+    padding-left: 50px;
+    width: 20%;
 }
 
 /* eラベルとデータ共通 */
