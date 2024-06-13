@@ -36,4 +36,9 @@ class RegisteredUserController extends Controller
 
         return app(ResponsesRegisterResponse::class);
     }
+
+    public function verify()
+    {
+        return view('auth.verify-email');
+    }
 }

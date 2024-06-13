@@ -16,9 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('email/verify', [RegisteredUserController::class, 'verify']);
 Route::post('/register', [RegisteredUserController::class, 'store']);
 
-Route::middleware('auth')->group(function () {
+Route::group(['middleware' => ['auth','verified']], function () {
     Route::get('/', [AttendanceController::class, 'index']);
     Route::get('/attendance', [AttendanceController::class, 'attendance']);
     Route::get('/attendance/move', [AttendanceController::class, 'attendanceMove']);
