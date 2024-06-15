@@ -92,12 +92,18 @@ class AttendanceController extends Controller
 
     public function addAttendTime()
     {
+        $today = Carbon::today();
+        $attendance_exist = Attendance::where('user_id', Auth::id())->whereDate('date', $today)->first();
+        if (empty($attendance_exist->attend_time)) {
         $attendance = new Attendance;
         $attendance->date = Carbon::today();
         $attendance->attend_time = Carbon::now();
         $attendance->user_id = Auth::id();
         $attendance->save();
         return redirect('/');
+        } else {
+            return redirect('/');
+        }
     }
 
     public function addLeavingTime()

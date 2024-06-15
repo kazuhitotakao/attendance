@@ -18,5 +18,5 @@ class RegisterResponse implements RegisterResponseContract
         return $request->wantsJson()
             ? new JsonResponse('', 201)
             : redirect('email/verify');
-    }
+    }   
 }
