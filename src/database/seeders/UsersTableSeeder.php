@@ -48,6 +48,7 @@ class UsersTableSeeder extends Seeder
 
         $now = Carbon::now();
         foreach ($params as $param) {
+            $param['email_verified_at'] = $now;
             $param['created_at'] = $now;
             $param['updated_at'] = $now;
             DB::table('users')->insert($param);
