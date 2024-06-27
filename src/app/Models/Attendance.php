@@ -27,7 +27,12 @@ class Attendance extends Model
     public function getBreakTimeTotalAttribute()
     {
         $break_time = $this->break_time;
-        return gmdate("H:i:s", $break_time);
+        if (empty($break_time)) {
+            $break_time = 0;
+            return gmdate("H:i:s", $break_time);
+        } else {
+            return gmdate("H:i:s", $break_time);
+        }
     }
 
     public function getWorkingHoursAttribute()
@@ -42,7 +47,6 @@ class Attendance extends Model
         } else {
             $working_hours = 0;
             return gmdate("H:i:s", $working_hours);
-
         }
     }
 
