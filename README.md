@@ -6,23 +6,23 @@
 　社員の勤怠管理をシステムで行うことで、人事評価を適切に実施するため。  
   
 ## 【機能一覧】  
-　・ログイン機能  
-　・メールアドレス認証機能（メールによる本人確認）  
-　・ログアウト機能  
-　・勤務開始および勤務終了機能  
+#### 　・ログイン機能  
+#### 　・メールアドレス認証機能（メールによる本人確認）  
+#### 　・ログアウト機能  
+#### 　・勤務開始および勤務終了機能  
 　　　ユーザーにつき1日１度可能。  
 　　　日を跨いだ時点で翌日の出勤操作に切り替える。  
 　　　※退勤を押さずに日を跨いだ場合、夜勤勤務として考え、23:59:59秒で退勤したことにし、  
 　　　　00:00:00出勤のデータを作成する仕様にした。（クライアントであるコーチと相談済）  
-　・休憩開始および休憩終了機能  
+#### 　・休憩開始および休憩終了機能  
 　　　１日に何度でも休憩可能。  
-　・日付別勤怠情報取得  
+#### 　・日付別勤怠情報取得  
 　　　日付別に出勤操作などを行ったユーザーを確認可能。  
-　・ユーザー一覧機能  
+#### 　・ユーザー一覧機能  
 　　　名前やメールアドレスでユーザーの抽出が可能。  
-　・ユーザー別の勤怠一覧表示機能  
+#### 　・ユーザー別の勤怠一覧表示機能  
 　　　月別で表示可能。  
-　・ページネーション（５件ずつ取得）  
+#### 　・ページネーション（５件ずつ取得）  
   
 ## 【使用技術（実行環境）】  
 #### ・開発環境（Docker環境）  
@@ -55,17 +55,17 @@
 ## 【環境構築】  
 ### （開発環境）  
 ### Dockerビルド  
-　１　git clone git@github.com:kazuhitotakao/attendance.git  
-　２　DockerDesktopアプリを立ち上げる  
-　３　docker compose up -d --build  
+#### 　１　git clone git@github.com:kazuhitotakao/attendance.git  
+#### 　２　DockerDesktopアプリを立ち上げる  
+#### 　３　docker compose up -d --build  
    
 ### Laravel環境構築  
-　１　docker compose exec php bash  
-　２　composer install  
-　３　「.env.example」ファイルを 「.env」ファイルに命名を変更  
+#### 　１　docker compose exec php bash  
+#### 　２　composer install  
+#### 　３　「.env.example」ファイルを 「.env」ファイルに命名を変更  
  　　　または、新しく.envファイルを作成  
   
-　４　.envファイルに以下の環境変数を修正・追加  
+#### 　４　.envファイルに以下の環境変数を修正・追加  
 　　　APP_NAME=Atte  
 　　　DB_HOST=mysql  
 　　　DB_DATABASE=laravel_db  
@@ -75,13 +75,13 @@
 　　　MAIL_PASSWORD=password  
 　　　MAIL_FROM_ADDRESS=info@example.com
   
-　５　アプリケーションキーの作成  
+#### 　５　アプリケーションキーの作成  
 　　　php artisan key:generate  
   
-　６　マイグレーションの実行  
+#### 　６　マイグレーションの実行  
 　　　php artisan migrate:fresh  
   
-　７　シーディングの実行  
+#### 　７　シーディングの実行  
 　　　php artisan db:seed  
 　　　※テストデータが作成されます。  
   
