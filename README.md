@@ -55,17 +55,17 @@
 ## 【環境構築】  
 ### （開発環境）  
 ### Dockerビルド  
-#### 　１　git clone git@github.com:kazuhitotakao/attendance.git  
-#### 　２　DockerDesktopアプリを立ち上げる  
-#### 　３　docker compose up -d --build  
+　１　git clone git@github.com:kazuhitotakao/attendance.git  
+　２　DockerDesktopアプリを立ち上げる  
+　３　docker compose up -d --build  
    
 ### Laravel環境構築  
-#### 　１　docker compose exec php bash  
-#### 　２　composer install  
-#### 　３　「.env.example」ファイルを 「.env」ファイルに命名を変更  
+　１　docker compose exec php bash  
+　２　composer install  
+　３　「.env.example」ファイルを 「.env」ファイルに命名を変更  
  　　　または、新しく.envファイルを作成  
   
-#### 　４　.envファイルに以下の環境変数を修正・追加  
+　４　.envファイルに以下の環境変数を修正・追加  
 　　　APP_NAME=Atte  
 　　　DB_HOST=mysql  
 　　　DB_DATABASE=laravel_db  
@@ -75,13 +75,13 @@
 　　　MAIL_PASSWORD=password  
 　　　MAIL_FROM_ADDRESS=info@example.com
   
-#### 　５　アプリケーションキーの作成  
+　５　アプリケーションキーの作成  
 　　　php artisan key:generate  
   
-#### 　６　マイグレーションの実行  
+　６　マイグレーションの実行  
 　　　php artisan migrate:fresh  
   
-#### 　７　シーディングの実行  
+　７　シーディングの実行  
 　　　php artisan db:seed  
 　　　※テストデータが作成されます。  
   
@@ -101,6 +101,6 @@
   
 #### ・開発環境と本番環境での主な相違点  
 　　開発環境ではDockerで環境構築を行っている。  
-  　メールアドレスの認証にMailHogを使用しており、MailHog上でメール認証を行うことが必要。  
+　　メールアドレスの認証にMailHogを使用しており、MailHog上でメール認証を行うことが必要。  
 　　本番環境では、AWSで環境構築を行っている。  
-  　メールアドレス認証にGmailサーバーを使用しており、実際に各人のメールアドレスでメール認証を行うこと。  
+　　メールアドレス認証にGmailサーバーを使用しており、実際に各人のメールアドレスでメール認証を行うこと。  
