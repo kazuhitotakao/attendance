@@ -12,8 +12,8 @@
 　・勤務開始および勤務終了機能  
 　　　ユーザーにつき1日１度可能。  
 　　　日を跨いだ時点で翌日の出勤操作に切り替える。  
-      ※退勤を押さずに日を跨いだ場合、夜勤勤務として考え、23:59:59秒で退勤したことにし、  
-        00:00:00出勤のデータを作成する仕様にした。（クライアントであるコーチと相談済）  
+　　　※退勤を押さずに日を跨いだ場合、夜勤勤務として考え、23:59:59秒で退勤したことにし、  
+   　　 00:00:00出勤のデータを作成する仕様にした。（クライアントであるコーチと相談済）  
 　・休憩開始および休憩終了機能  
 　　　１日に何度でも休憩可能。  
 　・日付別勤怠情報取得  
@@ -36,9 +36,9 @@
   
 ・本番環境（AWS環境）  
 　　EC2（バックエンド）  
-　　　　PHP		8.2.19  
-　　　　Laravel		8.83.27  
-　　　　nginx		1.22.1  
+　　　PHP		8.2.19  
+　　　Laravel		8.83.27  
+　　　nginx		1.22.1  
 　　RDS（データベース）  
 　　S3（ストレージ）  
 　　Gmail（メールサーバーとして使用）  
@@ -65,14 +65,14 @@ Laravel環境構築
       または、新しく.envファイルを作成  
   
 　４　.envファイルに以下の環境変数を修正・追加  
-      APP_NAME=Atte  
-      DB_HOST=mysql  
-      DB_DATABASE=laravel_db  
-      DB_USERNAME=laravel_user  
-      DB_PASSWORD=laravel_pass  
-      MAIL_USERNAME=user  
-      MAIL_PASSWORD=password  
-      MAIL_FROM_ADDRESS=info@example.com
+　　　APP_NAME=Atte  
+　　　DB_HOST=mysql  　　
+　　　DB_DATABASE=laravel_db  
+　　　DB_USERNAME=laravel_user  
+　　　DB_PASSWORD=laravel_pass  
+　　　MAIL_USERNAME=user  
+　　　MAIL_PASSWORD=password  
+　　　MAIL_FROM_ADDRESS=info@example.com
   
 　５　アプリケーションキーの作成  
 　　　php artisan key:generate  
@@ -86,12 +86,12 @@ Laravel環境構築
   
 【URL】  
 ・開発環境  
-    開発環境    ：http://localhost/  
-    phpMyAdmin:：http://localhost:8080/	  
-    MailHog    ：http://localhost:8025/  
+    開発環境：http://localhost/  
+    phpMyAdmin：http://localhost:8080/	  
+    MailHog：http://localhost:8025/  
 ・本番環境
 　　デプロイ済のURL：http://43.207.55.116/  
-※開発環境・本番環境ともに、ログイン前に、メールアドレス登録を行い、登録したメールアドレスでの認証が必要。  
+　　※開発環境・本番環境ともに、ログイン前に、メールアドレス登録を行い、登録したメールアドレスでの認証が必要。  
 
 【その他】  
 ・開発環境と本番環境の切り分けについて  
