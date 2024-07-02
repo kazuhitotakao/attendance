@@ -61,10 +61,10 @@
 　３　docker compose up -d --build  
    
 ### Laravel環境構築  
-  １　docker compose exec php bash  
-  ２　composer install  
-  ３　「.env.example」ファイルを 「.env」ファイルに命名を変更  
-      または、新しく.envファイルを作成  
+　１　docker compose exec php bash  
+　２　composer install  
+　３　「.env.example」ファイルを 「.env」ファイルに命名を変更  
+ 　　　または、新しく.envファイルを作成  
   
 　４　.envファイルに以下の環境変数を修正・追加  
 　　　APP_NAME=Atte  
@@ -101,5 +101,7 @@
 　　※個人情報が記載されているため、git.ignoreに記載し、リモートリポジトリへはpushしていない  
   
 ・開発環境と本番環境での主な相違点  
-　　開発環境ではDockerで環境構築を行っている。また、メールアドレスの認証にMailHogを使用しており、MailHog上でメール認証を行うことが必要。  
-　　本番環境では、AWSで環境構築を行っている。メールアドレス認証にGmailサーバーを使用しており、実際に各人のメールアドレスでメール認証を行うこと。  
+　　開発環境ではDockerで環境構築を行っている。
+  　メールアドレスの認証にMailHogを使用しており、MailHog上でメール認証を行うことが必要。  
+　　本番環境では、AWSで環境構築を行っている。
+  　メールアドレス認証にGmailサーバーを使用しており、実際に各人のメールアドレスでメール認証を行うこと。  
