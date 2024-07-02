@@ -53,7 +53,7 @@
 <img width="443" alt="Atte_ER" src="https://github.com/kazuhitotakao/attendance/assets/158255815/05fa8f48-238e-4650-a240-f4f9adbbe589">  
   
 ## 【環境構築】  
-### （開発環境）  
+### ※開発環境のみ記載※  
 ### Dockerビルド  
 　１　git clone git@github.com:kazuhitotakao/attendance.git  
 　２　DockerDesktopアプリを立ち上げる  
