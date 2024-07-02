@@ -47,6 +47,7 @@
   
 ## 【テーブル設計図】  
 <img width="497" alt="テーブル設計図_user" src="https://github.com/kazuhitotakao/attendance/assets/158255815/21817345-1f30-4889-9cd2-4b4b67f33009">  
+  
 <img width="498" alt="テーブル設計図_attendances" src="https://github.com/kazuhitotakao/attendance/assets/158255815/617c30e3-17a0-4d02-bdf7-b168331bf500">  
   
 ## 【ER図】  
@@ -87,18 +88,18 @@
   
 ## 【URL】  
 ・開発環境  
-    開発環境：http://localhost/  
-    phpMyAdmin：http://localhost:8080/	  
-    MailHog：http://localhost:8025/  
+　　開発環境：http://localhost/  
+　　phpMyAdmin：http://localhost:8080/	  
+　　MailHog：http://localhost:8025/  
 ・本番環境
 　　デプロイ済のURL：http://43.207.55.116/  
 　　※開発環境・本番環境ともに、ログイン前に、メールアドレス登録を行い、登録したメールアドレスでの認証が必要。  
 
 ## 【その他】  
 ・開発環境と本番環境の切り分けについて  
-  .env.development（開発環境） .env.production（本番環境）で切り分けを実施  
-  ※個人情報が記載されているため、git.ignoreに記載し、リモートリポジトリへはpushしていない  
+　　.env.development（開発環境） .env.production（本番環境）で切り分けを実施  
+　　※個人情報が記載されているため、git.ignoreに記載し、リモートリポジトリへはpushしていない  
   
 ・開発環境と本番環境での主な相違点  
-  開発環境ではDockerで環境構築を行っている。また、メールアドレスの認証にMailHogを使用しており、MailHog上でメール認証を行うことが必要。  
-  本番環境では、AWSで環境構築を行っている。メールアドレス認証にGmailサーバーを使用しており、実際に各人のメールアドレスでメール認証を行うこと。  
+　　開発環境ではDockerで環境構築を行っている。また、メールアドレスの認証にMailHogを使用しており、MailHog上でメール認証を行うことが必要。  
+　　本番環境では、AWSで環境構築を行っている。メールアドレス認証にGmailサーバーを使用しており、実際に各人のメールアドレスでメール認証を行うこと。  
