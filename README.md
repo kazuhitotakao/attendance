@@ -1,11 +1,11 @@
-【Atte（勤怠管理アプリ）】  
+## 【Atte（勤怠管理アプリ）】  
 　～トップ画面イメージ～  
  <img width="938" alt="トップ画面" src="https://github.com/kazuhitotakao/attendance/assets/158255815/b40bc9e6-f981-4a56-b015-43732b7f3783">  
  
-【制作した目的】  
+## 【制作した目的】  
 　社員の勤怠管理をシステムで行うことで、人事評価を適切に実施するため。  
   
-【機能一覧】  
+## 【機能一覧】  
 　・ログイン機能  
 　・メールアドレス認証機能（メールによる本人確認）  
 　・ログアウト機能  
@@ -24,7 +24,7 @@
 　　　月別で表示可能。  
 　・ページネーション（５件ずつ取得）  
   
-【使用技術（実行環境）】  
+## 【使用技術（実行環境）】  
 ・開発環境（Docker環境）  
 　　PHP		7.4.9  
 　　Laravel	8.83.27  
@@ -32,7 +32,8 @@
 　　nginx	1.21.1  
 　　MailHog（メールサーバー）　  
 　　cron （自動実行ジョブサーバー）※深夜0時の処理用  
-　　※開発環境においては、PCがスリープ中はcronの実行が行われないため、常にPCを起動しておくか、タイムスケジューラ等で実行時刻の1分前ほどにスリープ解除するタスクの実装を推奨する。  
+　　※開発環境においては、PCがスリープ中はcronの実行が行われないため、常にPCを起動しておくか、  
+　　　タイムスケジューラ等で実行時刻の1分前ほどにスリープ解除するタスクの実装を推奨する。  
   
 ・本番環境（AWS環境）  
 　　EC2（バックエンド）  
@@ -44,21 +45,21 @@
 　　Gmail（メールサーバーとして使用）  
 　　cron（Amazon linux2に初期実装されている）  
   
-【テーブル設計図】  
+## 【テーブル設計図】  
 <img width="497" alt="テーブル設計図_user" src="https://github.com/kazuhitotakao/attendance/assets/158255815/21817345-1f30-4889-9cd2-4b4b67f33009">  
 <img width="498" alt="テーブル設計図_attendances" src="https://github.com/kazuhitotakao/attendance/assets/158255815/617c30e3-17a0-4d02-bdf7-b168331bf500">  
   
-【ER図】  
+## 【ER図】  
 <img width="443" alt="Atte_ER" src="https://github.com/kazuhitotakao/attendance/assets/158255815/05fa8f48-238e-4650-a240-f4f9adbbe589">  
   
-【環境構築】  
-（開発環境）  
-Dockerビルド  
+## 【環境構築】  
+### （開発環境）  
+### Dockerビルド  
 　１　git clone git@github.com:kazuhitotakao/attendance.git  
 　２　DockerDesktopアプリを立ち上げる  
 　３　docker compose up -d --build  
    
-Laravel環境構築  
+### Laravel環境構築  
   １　docker compose exec php bash  
   ２　composer install  
   ３　「.env.example」ファイルを 「.env」ファイルに命名を変更  
@@ -84,7 +85,7 @@ Laravel環境構築
       php artisan db:seed  
       ※テストデータが作成されます。  
   
-【URL】  
+## 【URL】  
 ・開発環境  
     開発環境：http://localhost/  
     phpMyAdmin：http://localhost:8080/	  
@@ -93,7 +94,7 @@ Laravel環境構築
 　　デプロイ済のURL：http://43.207.55.116/  
 　　※開発環境・本番環境ともに、ログイン前に、メールアドレス登録を行い、登録したメールアドレスでの認証が必要。  
 
-【その他】  
+## 【その他】  
 ・開発環境と本番環境の切り分けについて  
   .env.development（開発環境） .env.production（本番環境）で切り分けを実施  
   ※個人情報が記載されているため、git.ignoreに記載し、リモートリポジトリへはpushしていない  
